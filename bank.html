@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Account Number Form</title>
+    <script>
+        function validateForm() {
+            var accountNumber = document.forms["accountForm"]["account_number"].value;
+            var pattern = /^\d{9}$/; // Regular expression for 9-digit account number
+            
+            if (accountNumber.match(pattern)) {
+                return true; // Account number is valid
+            } else {
+                alert("Please enter a valid 9-digit account number");
+                return false; // Prevent form submission
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Bank Account Number Form</h1>
+    <form name="accountForm" onsubmit="return validateForm()">
+        <label for="account_number">Account Number:</label>
+        <input type="text" id="account_number" name="account_number" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
